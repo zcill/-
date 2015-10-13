@@ -14,6 +14,7 @@
 // 保存ApplistController传入的block，点击分类cell，执行block，来改变Applist显示的app列表对应响应的分类
 @property (nonatomic, copy) void (^changeSortBlock)(NSString * categoryID);
 
-- (void)setChangeSortBlock:(void (^)(NSString *))changeSortBlock;
+- (void)setChangeSortBlock:(void (^)(NSString *categoryID))changeSortBlock;
+//- (void)setChangeSortBlock:(void (^)(NSString *))changeSortBlock;
 
 @end

@@ -10,4 +10,11 @@
 
 @implementation ZCSortModel
 
+// 防止异常crash
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    
+    NSLog(@"forUndifinedKey");
+    
+}
+
 @end

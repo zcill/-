@@ -32,33 +32,64 @@
 
 - (void)downloadData {
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
+    [manager GET:CATE_URL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSArray *array = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        for (NSDictionary *cateDict in array) {
+            
+//            [ZJModelTool createModelWithDictionary:cateDict modelName:@"ZCSortModel"];
+            
+            ZCSortModel *model = [[ZCSortModel alloc] init];
+            [model setValuesForKeysWithDictionary:cateDict];
+            [_dataSource addObject:model];
+            
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
     
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    
+    return _dataSource.count;
+    
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *reuseID = @"ZCSortCell";
+    ZCSortCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
     
-    // Configure the cell...
+    ZCSortModel *model = _dataSource[indexPath.row];
+    [cell.iconImageView setImageWithURL:[NSURL URLWithString:model.picUrl]];
+    // 把icon切成圆角
+    cell.iconImageView.clipsToBounds = YES;
+    cell.iconImageView.layer.cornerRadius = 10;
+    
+    cell.titleLabel.text = model.categoryCname;
+    cell.detailLabel.text = [NSString stringWithFormat:@"共有%@款应用，其中限免%@款", model.categoryCount, model.limited];
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 90;
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -94,21 +125,19 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+
+    ZCSortModel *model = _dataSource[indexPath.row];
+    if (self.changeSortBlock) {
+        self.changeSortBlock(model.categoryId);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
     
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
-*/
+
 
 /*
 #pragma mark - Navigation

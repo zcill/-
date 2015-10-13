@@ -20,6 +20,7 @@
 //// 适配
 //#import "ZJScreenAdaptation.h"
 //#import "ZJScreenAdaptaionMacro.h"
+#import "ZCSortTableViewController.h"
 
 @interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -50,6 +51,10 @@
 
 // 先下载数据
 - (void)downloadData {
+    
+    // 清空数组，否则选择分类之后，回调的数据都会接在之前的数据之后
+    [_dataSource removeAllObjects];
+    
     NSString *urlStr = [NSString stringWithFormat:self.urlString, _page, _categoryID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -92,9 +97,22 @@
 
 - (void)doSort {
     
+    ZCSortTableViewController *sortVC = [[ZCSortTableViewController alloc] initWithNibName:@"ZCSortTableViewController" bundle:nil];
+    [sortVC setChangeSortBlock:^(NSString *categoryID) {
+        
+        _categoryID = categoryID;
+        _page = 1;
+        [self downloadData];
+        
+    }];
+    
+    [self.navigationController pushViewController:sortVC animated:YES];
+    
 }
 
 - (void)doConfig {
+    
+
     
 }
 
