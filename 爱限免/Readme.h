@@ -38,6 +38,9 @@
     5. 限免、降价、免费、热榜  显示不同的数据
         <1>.Applist定制urlString，请求数据加载 self.urlString
         <2>.AppDelegate.m createTabBar 里面设置不同的网址
+    
+    6. 分类页面
+    
  
  */
 

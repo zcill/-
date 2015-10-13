@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50112321BCCA38C00B3AEE7 /* ZCSortTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50112301BCCA38C00B3AEE7 /* ZCSortTableViewController.m */; };
+		D50112331BCCA38C00B3AEE7 /* ZCSortTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50112311BCCA38C00B3AEE7 /* ZCSortTableViewController.xib */; };
+		D50112371BCCA3BF00B3AEE7 /* ZCSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D50112351BCCA3BF00B3AEE7 /* ZCSortCell.m */; };
+		D50112381BCCA3BF00B3AEE7 /* ZCSortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50112361BCCA3BF00B3AEE7 /* ZCSortCell.xib */; };
+		D501123B1BCCA3E100B3AEE7 /* ZCSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D501123A1BCCA3E100B3AEE7 /* ZCSortModel.m */; };
 		D5589E841BCB8A9F0055A1BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E831BCB8A9F0055A1BD /* main.m */; };
 		D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E861BCB8A9F0055A1BD /* AppDelegate.m */; };
 		D5589E8A1BCB8A9F0055A1BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E891BCB8A9F0055A1BD /* ViewController.m */; };
@@ -219,6 +224,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D501122F1BCCA38C00B3AEE7 /* ZCSortTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSortTableViewController.h; sourceTree = "<group>"; };
+		D50112301BCCA38C00B3AEE7 /* ZCSortTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSortTableViewController.m; sourceTree = "<group>"; };
+		D50112311BCCA38C00B3AEE7 /* ZCSortTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCSortTableViewController.xib; sourceTree = "<group>"; };
+		D50112341BCCA3BF00B3AEE7 /* ZCSortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSortCell.h; sourceTree = "<group>"; };
+		D50112351BCCA3BF00B3AEE7 /* ZCSortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSortCell.m; sourceTree = "<group>"; };
+		D50112361BCCA3BF00B3AEE7 /* ZCSortCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCSortCell.xib; sourceTree = "<group>"; };
+		D50112391BCCA3E100B3AEE7 /* ZCSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSortModel.h; sourceTree = "<group>"; };
+		D501123A1BCCA3E100B3AEE7 /* ZCSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSortModel.m; sourceTree = "<group>"; };
 		D5589E7E1BCB8A9F0055A1BD /* 爱限免.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱限免.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5589E821BCB8A9F0055A1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5589E831BCB8A9F0055A1BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -496,6 +509,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D501122D1BCCA30A00B3AEE7 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				D501122F1BCCA38C00B3AEE7 /* ZCSortTableViewController.h */,
+				D50112301BCCA38C00B3AEE7 /* ZCSortTableViewController.m */,
+				D50112311BCCA38C00B3AEE7 /* ZCSortTableViewController.xib */,
+				D50112341BCCA3BF00B3AEE7 /* ZCSortCell.h */,
+				D50112351BCCA3BF00B3AEE7 /* ZCSortCell.m */,
+				D50112361BCCA3BF00B3AEE7 /* ZCSortCell.xib */,
+				D50112391BCCA3E100B3AEE7 /* ZCSortModel.h */,
+				D501123A1BCCA3E100B3AEE7 /* ZCSortModel.m */,
+			);
+			name = Sort;
+			sourceTree = "<group>";
+		};
+		D501122E1BCCA31000B3AEE7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		D5589E751BCB8A9F0055A1BD = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +556,8 @@
 		D5589E801BCB8A9F0055A1BD /* 爱限免 */ = {
 			isa = PBXGroup;
 			children = (
+				D501122E1BCCA31000B3AEE7 /* Search */,
+				D501122D1BCCA30A00B3AEE7 /* Sort */,
 				D558A05B1BCB92B80055A1BD /* Common */,
 				D558A0561BCB91FA0055A1BD /* Limit */,
 				D558A0581BCB924B0055A1BD /* Sale */,
@@ -1120,6 +1157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50112381BCCA3BF00B3AEE7 /* ZCSortCell.xib in Resources */,
 				D558A02D1BCB8C3F0055A1BD /* topic_Cell_Bg.png in Resources */,
 				D558A0191BCB8C3F0055A1BD /* tabbar_bg.png in Resources */,
 				D558A0321BCB8C3F0055A1BD /* topic_Download@2x.png in Resources */,
@@ -1242,6 +1280,7 @@
 				D5589F171BCB8C260055A1BD /* JHRefresh.bundle in Resources */,
 				D558A0381BCB8C3F0055A1BD /* close@2x.png in Resources */,
 				D558A0441BCB8C3F0055A1BD /* numbver_tip.png in Resources */,
+				D50112331BCCA38C00B3AEE7 /* ZCSortTableViewController.xib in Resources */,
 				D558A01B1BCB8C3F0055A1BD /* tabbar_limitfree.png in Resources */,
 				D558A04D1BCB8C3F0055A1BD /* user_total@2x.png in Resources */,
 				D558A03B1BCB8C3F0055A1BD /* filedd.png in Resources */,
@@ -1289,6 +1328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5589F181BCB8C260055A1BD /* JHRefreshBaseView.m in Sources */,
+				D50112371BCCA3BF00B3AEE7 /* ZCSortCell.m in Sources */,
 				D5FCBB1D1BCC94AB00C656B8 /* ZCTopicViewController.m in Sources */,
 				D5589F261BCB8C260055A1BD /* UIView+ZTQuickControl.m in Sources */,
 				D5589F1B1BCB8C260055A1BD /* JHRefreshHeaderView.m in Sources */,
@@ -1321,7 +1361,9 @@
 				D5589F161BCB8C260055A1BD /* JHRefreshCommonAniView.m in Sources */,
 				D5FCBB201BCC94C900C656B8 /* ZCHotViewController.m in Sources */,
 				D5589F1E1BCB8C260055A1BD /* UIView+JHExtension.m in Sources */,
+				D501123B1BCCA3E100B3AEE7 /* ZCSortModel.m in Sources */,
 				D5589F141BCB8C260055A1BD /* JHRefreshAmazingAniView.m in Sources */,
+				D50112321BCCA38C00B3AEE7 /* ZCSortTableViewController.m in Sources */,
 				D5589F0B1BCB8C260055A1BD /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D5589F1C1BCB8C260055A1BD /* UIScrollView+JHExtension.m in Sources */,
 				D5589F0C1BCB8C260055A1BD /* README.md in Sources */,

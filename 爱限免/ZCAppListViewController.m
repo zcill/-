@@ -44,6 +44,8 @@
     
     [self downloadData];
     [self createTableView];
+    
+    [self configNavigation];
 }
 
 // 先下载数据
@@ -74,6 +76,41 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+    
+}
+
+// 配置导航
+- (void)configNavigation {
+    
+    UIBarButtonItem *sortBarButtonItem = [self createItemWithSize:CGSizeMakeEx(40, 28) imageName:@"buttonbar_action.png" title:@"分类" target:self action:@selector(doSort)];
+    
+    UIBarButtonItem *pageConfigBarButtonItem = [self createItemWithSize:CGSizeMakeEx(40, 28) imageName:@"buttonbar_action.png" title:@"配置" target:self action:@selector(doConfig)];
+    
+    self.navigationItem.leftBarButtonItem = sortBarButtonItem;
+    self.navigationItem.rightBarButtonItem = pageConfigBarButtonItem;
+}
+
+- (void)doSort {
+    
+}
+
+- (void)doConfig {
+    
+}
+
+// 定制BarItem，传入必要的参数
+- (UIBarButtonItem *)createItemWithSize:(CGSize)size imageName:(NSString *)imageName title:(NSString *)title target:(id)target action:(SEL)action {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMakeEx(0, 0, size.width, size.height);
+    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    return item;
     
 }
 
