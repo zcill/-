@@ -7,19 +7,19 @@
 //
 
 #import "ZCAppListViewController.h"
-// 接口
-#import "NetInterface.h"
-// 网络
-#import "AFNetworking.h"
-#import "UIKit+AFNetworking.h"
-// model工具
-#import "ZJModelTool.h"
+//// 接口
+//#import "NetInterface.h"
+//// 网络
+//#import "AFNetworking.h"
+//#import "UIKit+AFNetworking.h"
+//// model工具
+//#import "ZJModelTool.h"
 #import "ZCAppModel.h"
 #import "ZCAppCell.h"
-
-// 适配
-#import "ZJScreenAdaptation.h"
-#import "ZJScreenAdaptaionMacro.h"
+//
+//// 适配
+//#import "ZJScreenAdaptation.h"
+//#import "ZJScreenAdaptaionMacro.h"
 
 @interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource>
 {

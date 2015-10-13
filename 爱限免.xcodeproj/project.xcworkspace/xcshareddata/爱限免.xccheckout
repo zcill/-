@@ -13,9 +13,9 @@
 		<key>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</key>
 		<string>https://github.com/zcill/-.git</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9431</key>
-		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/image2</string>
+		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%2525E7%252588%2525B1%2525E9%252599%252590%2525E5%252585%25258D/trunk/image2</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9828</key>
-		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/image</string>
+		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%2525E7%252588%2525B1%2525E9%252599%252590%2525E5%252585%25258D/trunk/image</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>爱限免.xcodeproj</string>
@@ -24,9 +24,9 @@
 		<key>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</key>
 		<string>../..</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9431</key>
-		<string>../..ImageResource/image2/</string>
+		<string>../..ImageResource/image2</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9828</key>
-		<string>../..ImageResource/image/</string>
+		<string>../..ImageResource/image</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>

@@ -1,0 +1,28 @@
+//
+//  Header.pch
+//  爱限免
+//
+//  Created by 朱立焜 on 15/10/13.
+//  Copyright (c) 2015年 zcill. All rights reserved.
+//
+
+#ifndef ____Header_pch
+#define ____Header_pch
+
+
+
+// 接口
+#import "NetInterface.h"
+// 网络
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
+// model工具
+#import "ZJModelTool.h"
+// 适配
+#import "ZJScreenAdaptation.h"
+#import "ZJScreenAdaptaionMacro.h"
+
+
+
+
+#endif
