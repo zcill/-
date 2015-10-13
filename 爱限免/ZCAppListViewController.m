@@ -11,6 +11,7 @@
 #import "ZCAppCell.h"
 #import "ZCSortTableViewController.h"
 #import "ZCSearchTableViewController.h"
+#import "ZCConfigViewController.h"
 
 @interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
@@ -105,8 +106,8 @@
 
 - (void)doConfig {
     
-
-    
+    ZCConfigViewController *cvc = [[ZCConfigViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 // 定制BarItem，传入必要的参数

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZCRootViewController.h"
 
-@interface ZCConfigViewController : UIViewController
+@interface ZCConfigViewController : ZCRootViewController
 
 @end
