@@ -7,22 +7,12 @@
 //
 
 #import "ZCAppListViewController.h"
-//// 接口
-//#import "NetInterface.h"
-//// 网络
-//#import "AFNetworking.h"
-//#import "UIKit+AFNetworking.h"
-//// model工具
-//#import "ZJModelTool.h"
 #import "ZCAppModel.h"
 #import "ZCAppCell.h"
-//
-//// 适配
-//#import "ZJScreenAdaptation.h"
-//#import "ZJScreenAdaptaionMacro.h"
 #import "ZCSortTableViewController.h"
+#import "ZCSearchTableViewController.h"
 
-@interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
     // tableView
     UITableView *_tableView;
@@ -31,6 +21,9 @@
     // URL参数
     int _page;
     NSString *_categoryID;
+    
+    // 搜索
+    UISearchBar *_searchBar;
 }
 @end
 
@@ -45,7 +38,7 @@
     
     [self downloadData];
     [self createTableView];
-    
+    [self createSearchBar];
     [self configNavigation];
 }
 
@@ -132,6 +125,41 @@
     
 }
 
+// 搜索框
+- (void)createSearchBar {
+    
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    _searchBar.placeholder = @"60万款应用搜搜看";
+    _searchBar.delegate = self;
+    
+    _tableView.tableHeaderView = _searchBar;
+}
+// searchBar 协议方法
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    
+    // 允许编辑，显示取消按钮
+    [searchBar setShowsCancelButton:YES animated:YES];
+    return YES;
+    
+}
+// 点击取消按钮
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+    
+}
+// 点击搜索按钮
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    NSLog(@"searchResult:%@", _searchBar.text);
+    
+    ZCSearchTableViewController *searchVC = [[ZCSearchTableViewController alloc] initWithNibName:@"ZCSearchTableViewController" bundle:nil];
+    
+    searchVC.searchKeyword = _searchBar.text;
+    
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
 
 // 创建tableView
 - (void)createTableView {

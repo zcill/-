@@ -40,7 +40,20 @@
         <2>.AppDelegate.m createTabBar 里面设置不同的网址
     
     6. 分类页面
-    
+        AppListView 导航条上添加分类按钮、配置按钮
+        创建了分类页面CategoryViewController
+        CategoryCell、CategoryModel
+        设置block反向传值
+        下载数据
+        显示页面
+ 
+    7. 搜索页面
+        AppList添加 searchBar显示搜索框
+        创建searchViewController，添加searchKeyword
+        转码: 处理搜索请求把中文转换成UTF8
+        网络请求，显示搜索结果
+ 
+ 
  
  */
 

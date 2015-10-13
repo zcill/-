@@ -12,6 +12,9 @@
 		D50112371BCCA3BF00B3AEE7 /* ZCSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D50112351BCCA3BF00B3AEE7 /* ZCSortCell.m */; };
 		D50112381BCCA3BF00B3AEE7 /* ZCSortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50112361BCCA3BF00B3AEE7 /* ZCSortCell.xib */; };
 		D501123B1BCCA3E100B3AEE7 /* ZCSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D501123A1BCCA3E100B3AEE7 /* ZCSortModel.m */; };
+		D50112401BCCF08C00B3AEE7 /* ZCSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501123E1BCCF08C00B3AEE7 /* ZCSearchTableViewController.m */; };
+		D50112411BCCF08C00B3AEE7 /* ZCSearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D501123F1BCCF08C00B3AEE7 /* ZCSearchTableViewController.xib */; };
+		D50112451BCCFBD400B3AEE7 /* ZCConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50112441BCCFBD400B3AEE7 /* ZCConfigViewController.m */; };
 		D5589E841BCB8A9F0055A1BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E831BCB8A9F0055A1BD /* main.m */; };
 		D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E861BCB8A9F0055A1BD /* AppDelegate.m */; };
 		D5589E8A1BCB8A9F0055A1BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E891BCB8A9F0055A1BD /* ViewController.m */; };
@@ -233,6 +236,11 @@
 		D50112391BCCA3E100B3AEE7 /* ZCSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSortModel.h; sourceTree = "<group>"; };
 		D501123A1BCCA3E100B3AEE7 /* ZCSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSortModel.m; sourceTree = "<group>"; };
 		D501123C1BCCAE1300B3AEE7 /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.pch; path = "爱限免/Header.pch"; sourceTree = "<group>"; };
+		D501123D1BCCF08C00B3AEE7 /* ZCSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSearchTableViewController.h; sourceTree = "<group>"; };
+		D501123E1BCCF08C00B3AEE7 /* ZCSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSearchTableViewController.m; sourceTree = "<group>"; };
+		D501123F1BCCF08C00B3AEE7 /* ZCSearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCSearchTableViewController.xib; sourceTree = "<group>"; };
+		D50112431BCCFBD400B3AEE7 /* ZCConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCConfigViewController.h; sourceTree = "<group>"; };
+		D50112441BCCFBD400B3AEE7 /* ZCConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCConfigViewController.m; sourceTree = "<group>"; };
 		D5589E7E1BCB8A9F0055A1BD /* 爱限免.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱限免.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5589E821BCB8A9F0055A1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5589E831BCB8A9F0055A1BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -528,8 +536,20 @@
 		D501122E1BCCA31000B3AEE7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D501123D1BCCF08C00B3AEE7 /* ZCSearchTableViewController.h */,
+				D501123E1BCCF08C00B3AEE7 /* ZCSearchTableViewController.m */,
+				D501123F1BCCF08C00B3AEE7 /* ZCSearchTableViewController.xib */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		D50112421BCCFBBF00B3AEE7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D50112431BCCFBD400B3AEE7 /* ZCConfigViewController.h */,
+				D50112441BCCFBD400B3AEE7 /* ZCConfigViewController.m */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		D5589E751BCB8A9F0055A1BD = {
@@ -558,6 +578,7 @@
 		D5589E801BCB8A9F0055A1BD /* 爱限免 */ = {
 			isa = PBXGroup;
 			children = (
+				D50112421BCCFBBF00B3AEE7 /* Config */,
 				D501122E1BCCA31000B3AEE7 /* Search */,
 				D501122D1BCCA30A00B3AEE7 /* Sort */,
 				D558A05B1BCB92B80055A1BD /* Common */,
@@ -1271,6 +1292,7 @@
 				D558A01C1BCB8C3F0055A1BD /* tabbar_limitfree@2x.png in Resources */,
 				D558A00C1BCB8C3F0055A1BD /* Default3@2x.png in Resources */,
 				D5589FEA1BCB8C3F0055A1BD /* category_Pastime.jpg in Resources */,
+				D50112411BCCF08C00B3AEE7 /* ZCSearchTableViewController.xib in Resources */,
 				D5589FC51BCB8C3F0055A1BD /* account_collect.png in Resources */,
 				D5589FEF1BCB8C3F0055A1BD /* category_Tool.jpg in Resources */,
 				D5589FEC1BCB8C3F0055A1BD /* category_Refer.jpg in Resources */,
@@ -1338,6 +1360,7 @@
 				D5589F111BCB8C260055A1BD /* UIProgressView+AFNetworking.m in Sources */,
 				D5589F241BCB8C260055A1BD /* UITabBarController+ZJExtension.m in Sources */,
 				D5589F0F1BCB8C260055A1BD /* UIButton+AFNetworking.m in Sources */,
+				D50112451BCCFBD400B3AEE7 /* ZCConfigViewController.m in Sources */,
 				D5FCBB171BCC946700C656B8 /* ZCSaleViewController.m in Sources */,
 				D5589F151BCB8C260055A1BD /* JHRefreshAniBaseView.m in Sources */,
 				D5589F1D1BCB8C260055A1BD /* UIScrollView+JHRefresh.m in Sources */,
@@ -1349,6 +1372,7 @@
 				D5589F031BCB8C260055A1BD /* AFHTTPRequestOperationManager.m in Sources */,
 				D5589F051BCB8C260055A1BD /* AFNetworkReachabilityManager.m in Sources */,
 				D5589F091BCB8C260055A1BD /* AFURLResponseSerialization.m in Sources */,
+				D50112401BCCF08C00B3AEE7 /* ZCSearchTableViewController.m in Sources */,
 				D558A06B1BCB94AF0055A1BD /* ZCAppCell.m in Sources */,
 				D5589F101BCB8C260055A1BD /* UIImageView+AFNetworking.m in Sources */,
 				D558A05E1BCB930B0055A1BD /* ZCRootViewController.m in Sources */,
