@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "UITabBarController+ZJExtension.h"
 #import "ZCLimitViewController.h"
+#import "ZCSaleViewController.h"
+#import "ZCFreeViewController.h"
+#import "ZCTopicViewController.h"
+#import "ZCHotViewController.h"
+#import "NetInterface.h"
 
 @interface AppDelegate ()
 
@@ -27,12 +32,29 @@
 // 创建标签栏
 - (void)createTabBar {
     
+    // 除了专题页面之外的父类
+    ZCAppListViewController *vc = nil;
+    
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"限免" image:@"tabbar_limitfree.png" selectImage:@"tabbar_limitfree_press.png"];
-    [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"降价" image:@"tabbar_reduceprice.png" selectImage:@"tabbar_reduceprice_press.png"];
-    [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"免费" image:@"tabbar_appfree.png" selectImage:@"tabbar_appfree_press.png"];
-    [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"专题" image:@"tabbar_subject.png" selectImage:@"tabbar_subject_press.png"];
-    [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"热榜" image:@"tabbar_rank.png" selectImage:@"tabbar_rank_press.png"];
+    
+    /** 限免页面 */
+    vc = [tbc addViewControlerWithClass:[ZCLimitViewController class] title:@"限免" image:@"tabbar_limitfree.png" selectImage:@"tabbar_limitfree_press.png"];
+    vc.urlString = LIMIT_URL;
+    
+    /** 降价页面 */
+    vc = [tbc addViewControlerWithClass:[ZCSaleViewController class] title:@"降价" image:@"tabbar_reduceprice.png" selectImage:@"tabbar_reduceprice_press.png"];
+    vc.urlString = SALE_URL;
+    
+    /** 免费页面 */
+    vc = [tbc addViewControlerWithClass:[ZCFreeViewController class] title:@"免费" image:@"tabbar_appfree.png" selectImage:@"tabbar_appfree_press.png"];
+    vc.urlString = FREE_URL;
+    
+    /** 专题页面 */
+    [tbc addViewControlerWithClass:[ZCTopicViewController class] title:@"专题" image:@"tabbar_subject.png" selectImage:@"tabbar_subject_press.png"];
+    
+    /** 热榜页面 */
+    vc = [tbc addViewControlerWithClass:[ZCHotViewController class] title:@"热榜" image:@"tabbar_rank.png" selectImage:@"tabbar_rank_press.png"];
+    vc.urlString = HOT_URL;
     
     self.window.rootViewController = tbc;
     self.window.backgroundColor = [UIColor whiteColor];

@@ -6,19 +6,27 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E19EFF64-BD53-467C-AD1E-6A9804DF7D60</string>
+	<key>IDESourceControlProjectName</key>
+	<string>爱限免</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</key>
+		<string>https://github.com/zcill/-.git</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9431</key>
 		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/image2</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9828</key>
 		<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/image</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>爱限免.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</key>
+		<string>../..</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9431</key>
-		<string>image2/</string>
+		<string>../..ImageResource/image2/</string>
 		<key>d3b33442-203a-4b98-a023-85834f8d8bd5++9828</key>
-		<string>image/</string>
+		<string>../..ImageResource/image/</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
@@ -28,13 +36,21 @@
 		<string>http://192.168.88.8/qfproj</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://192.168.88.8/qfproj/teachers/oyangjian/%25E7%2588%25B1%25E9%2599%2590%25E5%2585%258D/trunk/image</string>
+	<string>https://github.com/zcill/-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>d3b33442-203a-4b98-a023-85834f8d8bd5++9828</string>
+	<string>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>94C2244FAA695FFA6F63EC0481F6BE79009D2C5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E7%88%B1%E9%99%90%E5%85%8D</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>

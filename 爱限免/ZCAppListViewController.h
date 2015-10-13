@@ -10,4 +10,6 @@
 
 @interface ZCAppListViewController : ZCRootViewController
 
+@property (nonatomic, copy) NSString *urlString;
+
 @end

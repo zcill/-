@@ -48,11 +48,11 @@
 
 // 先下载数据
 - (void)downloadData {
-    NSString *urlString = [NSString stringWithFormat:LIMIT_URL, _page, _categoryID];
+    NSString *urlStr = [NSString stringWithFormat:self.urlString, _page, _categoryID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         
