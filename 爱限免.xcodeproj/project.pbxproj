@@ -60,7 +60,7 @@
 		D50D5BF01BCE2CA7005A00C9 /* ZCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */; };
 		D50D5BF31BCE53D1005A00C9 /* ZCAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */; };
 		D50D5BF71BCE595E005A00C9 /* ZCTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */; };
-		D50D5BF81BCE595E005A00C9 /* ZCTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */; };
+		D50D5BFB1BCE7093005A00C9 /* ZCTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BFA1BCE7093005A00C9 /* ZCTopicModel.m */; };
 		D5589E841BCB8A9F0055A1BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E831BCB8A9F0055A1BD /* main.m */; };
 		D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E861BCB8A9F0055A1BD /* AppDelegate.m */; };
 		D5589E8A1BCB8A9F0055A1BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E891BCB8A9F0055A1BD /* ViewController.m */; };
@@ -358,7 +358,8 @@
 		D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCAppView.m; sourceTree = "<group>"; };
 		D50D5BF41BCE595E005A00C9 /* ZCTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicCell.h; sourceTree = "<group>"; };
 		D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicCell.m; sourceTree = "<group>"; };
-		D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCTopicCell.xib; sourceTree = "<group>"; };
+		D50D5BF91BCE7093005A00C9 /* ZCTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicModel.h; sourceTree = "<group>"; };
+		D50D5BFA1BCE7093005A00C9 /* ZCTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicModel.m; sourceTree = "<group>"; };
 		D5589E7E1BCB8A9F0055A1BD /* 爱限免.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱限免.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5589E821BCB8A9F0055A1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5589E831BCB8A9F0055A1BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1350,7 +1351,8 @@
 				D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */,
 				D50D5BF41BCE595E005A00C9 /* ZCTopicCell.h */,
 				D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */,
-				D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */,
+				D50D5BF91BCE7093005A00C9 /* ZCTopicModel.h */,
+				D50D5BFA1BCE7093005A00C9 /* ZCTopicModel.m */,
 			);
 			name = Topic;
 			sourceTree = "<group>";
@@ -1586,7 +1588,6 @@
 				D558A0301BCB8C3F0055A1BD /* topic_Comment@2x.png in Resources */,
 				D5589FD11BCB8C3F0055A1BD /* account_user.png in Resources */,
 				D5589FE61BCB8C3F0055A1BD /* category_Life.jpg in Resources */,
-				D50D5BF81BCE595E005A00C9 /* ZCTopicCell.xib in Resources */,
 				D558A0161BCB8C3F0055A1BD /* tabbar_appfree@2x.png in Resources */,
 				D558A0391BCB8C3F0055A1BD /* egopv_left@2x.png in Resources */,
 				D558A04F1BCB8C3F0055A1BD /* 2.jpg in Resources */,
@@ -1698,6 +1699,7 @@
 				D5589F091BCB8C260055A1BD /* AFURLResponseSerialization.m in Sources */,
 				D50112401BCCF08C00B3AEE7 /* ZCSearchTableViewController.m in Sources */,
 				D558A06B1BCB94AF0055A1BD /* ZCAppCell.m in Sources */,
+				D50D5BFB1BCE7093005A00C9 /* ZCTopicModel.m in Sources */,
 				D5589F101BCB8C260055A1BD /* UIImageView+AFNetworking.m in Sources */,
 				D558A05E1BCB930B0055A1BD /* ZCRootViewController.m in Sources */,
 				D5589F071BCB8C260055A1BD /* AFURLConnectionOperation.m in Sources */,

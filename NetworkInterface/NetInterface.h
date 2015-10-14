@@ -24,7 +24,8 @@
 
 //专题界面接口
 //http://iappfree.candou.com:8080/free/special?page=1&limit=5
-#define TOPIC_URL @"http://iappfree.candou.com:8080/free/special?page=%d&limit=5"
+#define TOPIC_URL @"http://1000phone.net:8088/app/iAppFree/api/topic.php?page=%d&number=20"
+
 
 //热榜页面接口
 //http://open.candou.com/mobile/hot/page/1&category_id=6014

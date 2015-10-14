@@ -24,8 +24,26 @@
     _titleLabel = [self.contentView addLabelWithFrame:CGRectMake(10, 15, 320, 30) title:nil];
     _titleLabel.font = [UIFont systemFontOfSize:18];
     
-    _descLabel = [self.contentView addLabelWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>) title:<#(NSString *)#>]
+    _descLabel = [self.contentView addLabelWithFrame:CGRectMake(60, 260, 240, 40) title:nil];
+    _descLabel.font = [UIFont systemFontOfSize:12];
+    _descLabel.numberOfLines = 0;
     
+    _descImageView = [self.contentView addImageViewWithFrame:CGRectMake(10, 260, 40, 40) image:nil];
+    
+    
+    _appViewArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 4; i++) {
+        
+        double w = 160;
+        double h = 50;
+        double x = 140;
+        double y = 50 + i * h;
+        
+        ZCAppView *appView = [[ZCAppView alloc] initWithFrame:CGRectMake(x, y, w, h)];
+        [self.contentView addSubview:appView];
+        [_appViewArray addObject:appView];
+        
+    }
 }
 
 @end
