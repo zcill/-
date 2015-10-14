@@ -7,6 +7,7 @@
 //
 
 #import "ZCDetailViewController.h"
+#import "ZCDatabaseManager.h"
 
 @interface ZCDetailViewController ()
 // 详情页面的各个控件
@@ -73,11 +74,49 @@
     _starLabel = [_topView addLabelWithFrame:CGRectMake(90 + 100, 20 + 10 + 20, 200, 30) title:self.model.name];
     _starLabel.font = [UIFont systemFontOfSize:14];
     
+    __weak typeof (self) weakSelf = self;
     
     // 循环创建button
     for (int i = 0; i < 3; i++) {
         NSArray *titles = @[@"分享", @"收藏", @"下载"];
+        ZCDatabaseManager *dm = [ZCDatabaseManager shareInstance];
+        // 如果已经收藏过
+        if ([dm isExistsRecordWithZCAppModel:weakSelf.model recordType:ZCRecordTypeFavorite]) {
+            titles = @[@"分享", @"已收藏", @"下载"];
+        }
+        
         UIButton *button = [_topView addImageButtonWithFrame:CGRectMake(i * 100, 90, 100, 40) title:titles[i] image:@"Detail_btn_left.png" action:^(ZTButton *button) {
+            
+            switch (button.tag) {
+                case 100:{
+                    // 分享
+                    
+                    break;
+                }
+                case 101:{
+                    // 收藏
+//                    ZCDatabaseManager *dm = [ZCDatabaseManager shareInstance];
+                    // 如果不存在
+                    if (![dm isExistsRecordWithZCAppModel:weakSelf.model recordType:ZCRecordTypeFavorite]) {
+                        [dm addRecordWithZCAppModel:weakSelf.model recordType:ZCRecordTypeFavorite];
+                        [button setTitle:@"已收藏" forState:UIControlStateNormal];
+                    } else {
+                        // 取消收藏
+                        [dm removeRecordWithZCAppModel:weakSelf.model recordType:ZCRecordTypeFavorite];
+                        [button setTitle:@"收藏" forState:UIControlStateNormal];
+                    }
+                    
+                    break;
+                }
+                case 102:{
+                    // 下载
+                    
+                    break;
+                }
+                default:
+                    break;
+            }
+            
         }];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.tag = i + 100;

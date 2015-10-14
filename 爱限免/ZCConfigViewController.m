@@ -8,6 +8,7 @@
 
 #import "ZCConfigViewController.h"
 #import "ZTQuickControl.h"
+#import "ZCFavoriteViewController.h"
 
 @interface ZCConfigViewController ()
 
@@ -49,8 +50,17 @@
     double x = 35;
     double y = 64 + 40;
     
+    __weak typeof(self) weakSelf = self;
+    
     for (int i = 0; i < 8; i++) {
         UIButton *button = [self.view addImageButtonWithFrame:CGRectMake(x, y, w, h) title:nil image:images[i] action:^(ZTButton *button) {
+            
+            if (button.tag == 103) {
+                // 进入我的收藏页面
+                ZCFavoriteViewController *fvc = [[ZCFavoriteViewController alloc] init];
+                [weakSelf.navigationController pushViewController:fvc animated:YES];
+                
+            }
             
         }];
         button.tag = i + 100;
@@ -58,17 +68,22 @@
         UILabel *label = [self.view addLabelWithFrame:CGRectMake(x, y + 40, w, h) title:titles[i]];
         label.font = [UIFont systemFontOfSize:14];
         label.textAlignment = NSTextAlignmentCenter;
+
+#if 0
+        if (i % 3 != 2) {
+            x += (w + inteval);
+            NSLog(@"i取模3 = %d", i%3);
+        } else {
+            x = 35;
+            y += (h + inteval);
+        }
         
-//        if (i % 3 != 2) {
-//            x += (w + inteval);
-//            NSLog(@"i取模3 = %d", i%3);
-//        } else {
-//            x = 35;
-//            y += (h + inteval);
-//        }
+#else
         
         i % 3 != 2 ? (x += (w + inteval)) : (x = 35, y += (h + inteval));
-       
+     
+#endif
+        
     }
     
 }

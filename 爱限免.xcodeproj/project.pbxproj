@@ -56,6 +56,8 @@
 		D50D5BE11BCE0727005A00C9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D5BE01BCE0727005A00C9 /* CoreTelephony.framework */; };
 		D50D5BE31BCE0743005A00C9 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D5BE21BCE0743005A00C9 /* libstdc++.dylib */; };
 		D50D5BE51BCE0750005A00C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D5BE41BCE0750005A00C9 /* libz.dylib */; };
+		D50D5BE91BCE07EC005A00C9 /* ZCFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BE81BCE07EC005A00C9 /* ZCFavoriteViewController.m */; };
+		D50D5BF01BCE2CA7005A00C9 /* ZCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */; };
 		D5589E841BCB8A9F0055A1BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E831BCB8A9F0055A1BD /* main.m */; };
 		D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E861BCB8A9F0055A1BD /* AppDelegate.m */; };
 		D5589E8A1BCB8A9F0055A1BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E891BCB8A9F0055A1BD /* ViewController.m */; };
@@ -345,6 +347,10 @@
 		D50D5BE01BCE0727005A00C9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D50D5BE21BCE0743005A00C9 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		D50D5BE41BCE0750005A00C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D50D5BE71BCE07EC005A00C9 /* ZCFavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFavoriteViewController.h; sourceTree = "<group>"; };
+		D50D5BE81BCE07EC005A00C9 /* ZCFavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFavoriteViewController.m; sourceTree = "<group>"; };
+		D50D5BEE1BCE2CA7005A00C9 /* ZCDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDatabaseManager.h; sourceTree = "<group>"; };
+		D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDatabaseManager.m; sourceTree = "<group>"; };
 		D5589E7E1BCB8A9F0055A1BD /* 爱限免.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱限免.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5589E821BCB8A9F0055A1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5589E831BCB8A9F0055A1BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -662,6 +668,7 @@
 		D50112421BCCFBBF00B3AEE7 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				D50D5BE61BCE07C3005A00C9 /* Favorite */,
 				D50112431BCCFBD400B3AEE7 /* ZCConfigViewController.h */,
 				D50112441BCCFBD400B3AEE7 /* ZCConfigViewController.m */,
 			);
@@ -800,6 +807,24 @@
 			path = UMSocial_Sdk_Instructions;
 			sourceTree = "<group>";
 		};
+		D50D5BE61BCE07C3005A00C9 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				D50D5BE71BCE07EC005A00C9 /* ZCFavoriteViewController.h */,
+				D50D5BE81BCE07EC005A00C9 /* ZCFavoriteViewController.m */,
+			);
+			name = Favorite;
+			sourceTree = "<group>";
+		};
+		D50D5BEA1BCE0804005A00C9 /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				D50D5BEE1BCE2CA7005A00C9 /* ZCDatabaseManager.h */,
+				D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */,
+			);
+			name = DataBaseManager;
+			sourceTree = "<group>";
+		};
 		D5589E751BCB8A9F0055A1BD = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +859,7 @@
 		D5589E801BCB8A9F0055A1BD /* 爱限免 */ = {
 			isa = PBXGroup;
 			children = (
+				D50D5BEA1BCE0804005A00C9 /* DataBaseManager */,
 				D50112421BCCFBBF00B3AEE7 /* Config */,
 				D501122E1BCCA31000B3AEE7 /* Search */,
 				D501122D1BCCA30A00B3AEE7 /* Sort */,
@@ -1679,8 +1705,10 @@
 				D5589F0B1BCB8C260055A1BD /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D5589F1C1BCB8C260055A1BD /* UIScrollView+JHExtension.m in Sources */,
 				D5589F0C1BCB8C260055A1BD /* README.md in Sources */,
+				D50D5BF01BCE2CA7005A00C9 /* ZCDatabaseManager.m in Sources */,
 				D5589F131BCB8C260055A1BD /* UIWebView+AFNetworking.m in Sources */,
 				D5589F1F1BCB8C260055A1BD /* StarView.m in Sources */,
+				D50D5BE91BCE07EC005A00C9 /* ZCFavoriteViewController.m in Sources */,
 				D50D5BBA1BCE063D005A00C9 /* FMDatabaseQueue.m in Sources */,
 				D5589F0A1BCB8C260055A1BD /* AFURLSessionManager.m in Sources */,
 				D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */,
