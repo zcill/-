@@ -124,7 +124,22 @@
     _summaryLabel.text = self.model.desc;
     
     // scrollView上显示数据
+    NSArray *array = self.model.photos;
     
+    double inteval = 5.0;
+    double w = (280 - inteval * 6) / 5;
+    double h = 80;
+    double x = inteval;
+    double y = inteval;
+    
+    for (int i = 0; i < array.count; i++) {
+        UIImageView *imageView = [_snapshotScrollView addImageViewWithFrame:CGRectMake(x, y, w, h) image:nil];
+        [imageView setImageWithURL:[NSURL URLWithString:array[i][@"smallUrl"]]];
+        
+        x += (w + inteval);
+    }
+    // 设置滚动大小
+    _snapshotScrollView.contentSize = CGSizeMake(10 + (w + inteval) * array.count, h);
     
 }
 

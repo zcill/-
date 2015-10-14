@@ -35,4 +35,6 @@
 @property (nonatomic,copy) NSNumber *categoryId;
 @property (nonatomic,copy) NSString *desc;
 
+@property (nonatomic, copy) NSArray *photos;
+
 @end
