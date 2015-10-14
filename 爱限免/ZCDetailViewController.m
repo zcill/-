@@ -40,8 +40,13 @@
     
     // 只是创建视图，显示数据是在加载完之后
     [self createTopView];
-    
+    // 下载数据
     [self downloadAppDetailInfo];
+    // 创建附近的人也在用的app button
+    [self createButtonView];
+    _nearbyAppArray = [[NSMutableArray alloc] init];
+    
+    [self downloadAppNearbyAppInfo];
 }
 
 // 搭界面
@@ -111,7 +116,7 @@
     
     
 }
-
+// 刷新界面
 - (void)refreshUI {
     // 加载数据
     
@@ -141,6 +146,94 @@
     // 设置滚动大小
     _snapshotScrollView.contentSize = CGSizeMake(10 + (w + inteval) * array.count, h);
     
+}
+
+- (void)createButtonView {
+    
+    _buttonView = [self.view addImageViewWithFrame:CGRectMake(10, 285 + 64, 300, 80) image:@"appdetail_recommend.png"];
+    _buttonView.userInteractionEnabled = YES;
+    
+    _nearbyAppScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(5, 15, 290, 60)];
+    [_buttonView addSubview:_nearbyAppScrollView];
+    
+}
+
+- (void)downloadAppNearbyAppInfo {
+    
+    double longitude = 128.4523;
+    double latitude = 35.4013;
+    NSString *urlStr = [NSString stringWithFormat:NEARBY_APP_URL, longitude, latitude];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        NSArray *array = dict[@"applications"];
+        for (NSDictionary *appDict in array) {
+            ZCAppModel *model = [[ZCAppModel alloc] init];
+            [model setValuesForKeysWithDictionary:appDict];
+            [_nearbyAppArray addObject:model];
+        }
+        // 刷新 显示数据
+        [self refreshButtonUI];
+        
+        [self.model setValuesForKeysWithDictionary:dict];
+        self.model.desc = dict[@"description"];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error:%@", error);
+    }];
+    
+}
+
+- (void)refreshButtonUI {
+    
+    double w = 45;
+    double h = 45;
+    // 间隔
+    double inteval = (290 - 45 * 5) / 6;
+    double x = inteval;
+    double y = 2;
+    
+    for (int i = 0; i < _nearbyAppArray.count; i++) {
+        
+        ZCAppModel *model = _nearbyAppArray[i];
+        UIImageView *imageView = [_nearbyAppScrollView addImageViewWithFrame:CGRectMake(x, y, w, h) image:nil];
+        imageView.layer.cornerRadius = 5;
+        imageView.clipsToBounds = YES;
+        
+        [imageView setImageWithURL:[NSURL URLWithString:model.iconUrl]];
+        
+        // 图标下方的标题label
+        UILabel *label = [_nearbyAppScrollView addLabelWithFrame:CGRectMake(x, y + 29, w, h) title:model.name];
+        label.font = [UIFont systemFontOfSize:12];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        // 打开用户交互
+        imageView.userInteractionEnabled = YES;
+        imageView.tag = i + 200;
+        // 加一个点击手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        [imageView addGestureRecognizer:tap];
+        
+        x += (w + inteval);
+    }
+    // 让scrollView可以滑动
+    _nearbyAppScrollView.contentSize = CGSizeMake(10 + inteval + (w + inteval) * _nearbyAppArray.count, h);
+    _nearbyAppScrollView.showsHorizontalScrollIndicator = NO;
+    
+}
+
+- (void)tapAction:(UITapGestureRecognizer *)tap {
+    
+    ZCAppModel *model = _nearbyAppArray[tap.view.tag - 200];
+    ZCDetailViewController *dvc = [[ZCDetailViewController alloc] init];
+    
+    dvc.model = model;
+    
+    [self.navigationController pushViewController:dvc animated:YES];
 }
 
 
