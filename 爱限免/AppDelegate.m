@@ -14,6 +14,10 @@
 #import "ZCTopicViewController.h"
 #import "ZCHotViewController.h"
 #import "NetInterface.h"
+// 友盟
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +30,18 @@
     
     [self createTabBar];
     
+    [self configUMSocial];
+    
     return YES;
+}
+
+- (void)configUMSocial {
+    
+    [UMSocialData setAppKey:@"5556a53667e58e1bb500661d"];
+    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];
+    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
+    //Bundle ID: qianfeng.LimitFreeProject
+    
 }
 
 // 创建标签栏

@@ -23,7 +23,10 @@
 #import "ZJScreenAdaptaionMacro.h"
 // 快速添加视图
 #import "ZTQuickControl.h"
-
+// 友盟
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
 
 
 #endif

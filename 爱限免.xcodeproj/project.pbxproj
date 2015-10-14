@@ -58,6 +58,9 @@
 		D50D5BE51BCE0750005A00C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D50D5BE41BCE0750005A00C9 /* libz.dylib */; };
 		D50D5BE91BCE07EC005A00C9 /* ZCFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BE81BCE07EC005A00C9 /* ZCFavoriteViewController.m */; };
 		D50D5BF01BCE2CA7005A00C9 /* ZCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */; };
+		D50D5BF31BCE53D1005A00C9 /* ZCAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */; };
+		D50D5BF71BCE595E005A00C9 /* ZCTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */; };
+		D50D5BF81BCE595E005A00C9 /* ZCTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */; };
 		D5589E841BCB8A9F0055A1BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E831BCB8A9F0055A1BD /* main.m */; };
 		D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E861BCB8A9F0055A1BD /* AppDelegate.m */; };
 		D5589E8A1BCB8A9F0055A1BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5589E891BCB8A9F0055A1BD /* ViewController.m */; };
@@ -351,6 +354,11 @@
 		D50D5BE81BCE07EC005A00C9 /* ZCFavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFavoriteViewController.m; sourceTree = "<group>"; };
 		D50D5BEE1BCE2CA7005A00C9 /* ZCDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDatabaseManager.h; sourceTree = "<group>"; };
 		D50D5BEF1BCE2CA7005A00C9 /* ZCDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCDatabaseManager.m; sourceTree = "<group>"; };
+		D50D5BF11BCE53D1005A00C9 /* ZCAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCAppView.h; sourceTree = "<group>"; };
+		D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCAppView.m; sourceTree = "<group>"; };
+		D50D5BF41BCE595E005A00C9 /* ZCTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTopicCell.h; sourceTree = "<group>"; };
+		D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTopicCell.m; sourceTree = "<group>"; };
+		D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCTopicCell.xib; sourceTree = "<group>"; };
 		D5589E7E1BCB8A9F0055A1BD /* 爱限免.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "爱限免.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5589E821BCB8A9F0055A1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5589E831BCB8A9F0055A1BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1338,6 +1346,11 @@
 			children = (
 				D5FCBB1B1BCC94AB00C656B8 /* ZCTopicViewController.h */,
 				D5FCBB1C1BCC94AB00C656B8 /* ZCTopicViewController.m */,
+				D50D5BF11BCE53D1005A00C9 /* ZCAppView.h */,
+				D50D5BF21BCE53D1005A00C9 /* ZCAppView.m */,
+				D50D5BF41BCE595E005A00C9 /* ZCTopicCell.h */,
+				D50D5BF51BCE595E005A00C9 /* ZCTopicCell.m */,
+				D50D5BF61BCE595E005A00C9 /* ZCTopicCell.xib */,
 			);
 			name = Topic;
 			sourceTree = "<group>";
@@ -1573,6 +1586,7 @@
 				D558A0301BCB8C3F0055A1BD /* topic_Comment@2x.png in Resources */,
 				D5589FD11BCB8C3F0055A1BD /* account_user.png in Resources */,
 				D5589FE61BCB8C3F0055A1BD /* category_Life.jpg in Resources */,
+				D50D5BF81BCE595E005A00C9 /* ZCTopicCell.xib in Resources */,
 				D558A0161BCB8C3F0055A1BD /* tabbar_appfree@2x.png in Resources */,
 				D558A0391BCB8C3F0055A1BD /* egopv_left@2x.png in Resources */,
 				D558A04F1BCB8C3F0055A1BD /* 2.jpg in Resources */,
@@ -1705,6 +1719,7 @@
 				D5589F0B1BCB8C260055A1BD /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D5589F1C1BCB8C260055A1BD /* UIScrollView+JHExtension.m in Sources */,
 				D5589F0C1BCB8C260055A1BD /* README.md in Sources */,
+				D50D5BF31BCE53D1005A00C9 /* ZCAppView.m in Sources */,
 				D50D5BF01BCE2CA7005A00C9 /* ZCDatabaseManager.m in Sources */,
 				D5589F131BCB8C260055A1BD /* UIWebView+AFNetworking.m in Sources */,
 				D5589F1F1BCB8C260055A1BD /* StarView.m in Sources */,
@@ -1714,6 +1729,7 @@
 				D5589E871BCB8A9F0055A1BD /* AppDelegate.m in Sources */,
 				D5589E841BCB8A9F0055A1BD /* main.m in Sources */,
 				D558A0701BCBB04D0055A1BD /* ZCLimitViewController.m in Sources */,
+				D50D5BF71BCE595E005A00C9 /* ZCTopicCell.m in Sources */,
 				D5589F271BCB8C260055A1BD /* ZTButton.m in Sources */,
 				D5589F1A1BCB8C260055A1BD /* JHRefreshFooterView.m in Sources */,
 				D50D5BB91BCE063D005A00C9 /* FMDatabasePool.m in Sources */,

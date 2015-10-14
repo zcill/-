@@ -9,7 +9,7 @@
 #import "ZCDetailViewController.h"
 #import "ZCDatabaseManager.h"
 
-@interface ZCDetailViewController ()
+@interface ZCDetailViewController ()<UIActionSheetDelegate, UMSocialUIDelegate>
 // 详情页面的各个控件
 {
     UIImageView *_topView;
@@ -90,6 +90,10 @@
             switch (button.tag) {
                 case 100:{
                     // 分享
+                    // 平台类的公司提供了分享SDK(QQ、微博、微信)
+                    // 分享库: 友盟SDK、ShareSDK、百度分享SDK
+                    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"分享" delegate:weakSelf cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"新浪微博", @"微信好友", @"微信朋友圈", @"QQ好友", @"QQ空间", @"邮件", @"短信", nil];
+                    [actionSheet showInView:weakSelf.view];
                     
                     break;
                 }
@@ -110,6 +114,7 @@
                 }
                 case 102:{
                     // 下载
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:weakSelf.model.itunesUrl]];
                     
                     break;
                 }
@@ -133,6 +138,33 @@
     _summaryLabel.font = [UIFont systemFontOfSize:12];
     
     
+}
+
+// actionSheet 协议代理
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"%ld", buttonIndex);
+    if (buttonIndex < 7) {
+        NSArray *sharePlatforms = @[
+                                    UMShareToSina,
+                                    UMShareToWechatSession,
+                                    UMShareToWechatTimeline,
+                                    UMShareToQQ,
+                                    UMShareToQzone,
+                                    UMShareToEmail,
+                                    UMShareToSms
+                                    ];
+        // 微信好友、微信朋友圈、微信收藏、QQ空间、QQ好友、易信好友、易信朋友圈、Facebook、Twitter、Line等平台，如果需要接入，参考各自的文档
+        
+        
+        NSString *shareText = [NSString stringWithFormat:@"这蠢应用你们来看看有多垃圾，%@，地址是%@", self.model.name, self.model.itunesUrl];
+
+        // 设置分享内容和回调对象
+        [[UMSocialControllerService defaultControllerService] setShareText:shareText shareImage:_iconImageView.image socialUIDelegate:self];
+        
+        // 选择分享方式进行分享
+        [UMSocialSnsPlatformManager getSocialPlatformWithName:sharePlatforms[buttonIndex]].snsClickHandler(self, [UMSocialControllerService defaultControllerService], YES);
+        
+    }
 }
 
 // 下载数据
