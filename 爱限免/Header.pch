@@ -21,7 +21,8 @@
 // 适配
 #import "ZJScreenAdaptation.h"
 #import "ZJScreenAdaptaionMacro.h"
-
+// 快速添加视图
+#import "ZTQuickControl.h"
 
 
 

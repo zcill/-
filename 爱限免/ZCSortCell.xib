@@ -38,7 +38,7 @@
                 <outlet property="iconImageView" destination="nDw-zf-IJo" id="bOQ-g8-Tmi"/>
                 <outlet property="titleLabel" destination="Tna-F8-xMJ" id="bH1-UF-RD0"/>
             </connections>
-            <point key="canvasLocation" x="499.5" y="150"/>
+            <point key="canvasLocation" x="613.5" y="405"/>
         </tableViewCell>
     </objects>
     <resources>

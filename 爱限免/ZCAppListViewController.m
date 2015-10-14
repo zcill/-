@@ -12,6 +12,7 @@
 #import "ZCSortTableViewController.h"
 #import "ZCSearchTableViewController.h"
 #import "ZCConfigViewController.h"
+#import "ZCDetailViewController.h"
 
 @interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
@@ -201,5 +202,15 @@
     return heightEx(100);
 }
 
+// 点击某行的时候
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ZCAppModel *model = _dataSource[indexPath.row];
+    ZCDetailViewController *dvc = [[ZCDetailViewController alloc] init];
+    
+    dvc.model = model;
+    [self.navigationController pushViewController:dvc animated:YES];
+    
+}
 
 @end
