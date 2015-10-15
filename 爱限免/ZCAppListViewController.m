@@ -13,6 +13,7 @@
 #import "ZCSearchTableViewController.h"
 #import "ZCConfigViewController.h"
 #import "ZCDetailViewController.h"
+#import "JHRefresh.h"
 
 @interface ZCAppListViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
@@ -38,18 +39,33 @@
     _categoryID = @"";
     _dataSource = [[NSMutableArray alloc] init];
     
-    [self downloadData];
+    [self downloadData:YES];
     [self createTableView];
     [self createSearchBar];
     [self configNavigation];
+    [self refresh];
+}
+
+- (void)refresh {
+
+    __weak ZCAppListViewController *weakSelf = self;
+    
+    [_tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+       
+        _page = ++_page;
+        [weakSelf downloadData:NO];
+        
+    }];
+    
 }
 
 // 先下载数据
-- (void)downloadData {
+- (void)downloadData:(BOOL)needRemove{
     
     // 清空数组，否则选择分类之后，回调的数据都会接在之前的数据之后
-    [_dataSource removeAllObjects];
-    
+    if (needRemove) {
+        [_dataSource removeAllObjects];
+    }
     NSString *urlStr = [NSString stringWithFormat:self.urlString, _page, _categoryID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -74,9 +90,11 @@
         [_tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        NSLog(@"%@", error);
     }];
     
+    //事情做完了别忘了结束刷新动画~~~
+    [_tableView footerEndRefreshing];
 }
 
 // 配置导航
@@ -97,7 +115,7 @@
         
         _categoryID = categoryID;
         _page = 1;
-        [self downloadData];
+        [self downloadData:YES];
         
     }];
     
